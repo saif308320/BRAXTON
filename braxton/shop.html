@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Braxton</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar"><div class="shell"><span>Enterprise procurement</span><span>sales@braxtonelite.com</span></div></div>
+  <header class="bx">
+    <a class="wordmark" href="index.html">BRAXTON <span>BUSINESS SYSTEMS</span></a>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a class="cur" href="shop.html">Shop</a>
+      <a href="product.html">EliteBook 13</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="req" data-bag>Requisition <span data-count>0</span></button>
+      <button class="menu" id="menu">☰</button>
+    </div>
+  </header>
+  <div class="shell shop-bx">
+    <div class="k">Catalog</div>
+    <h1 style="font-size:36px;margin:8px 0 24px">Portfolio by SKU.</h1>
+    <table class="tableish">
+      <thead><tr><th>Unit</th><th>Model</th><th>Use</th><th>From</th><th></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=400&q=80" alt="EliteBook 13"></td>
+          <td><strong>EliteBook 13</strong></td>
+          <td>Executive</td>
+          <td>$1,799</td>
+          <td><a class="gold" href="product.html">Configure</a></td>
+        </tr>
+        <tr>
+          <td><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" alt="Board 14"></td>
+          <td><strong>Board 14</strong></td>
+          <td>Presentation</td>
+          <td>$1,599</td>
+          <td><button class="req" data-add="board-14">Add</button></td>
+        </tr>
+        <tr>
+          <td><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Secure 15"></td>
+          <td><strong>Secure 15</strong></td>
+          <td>Regulated</td>
+          <td>$2,099</td>
+          <td><button class="req" data-add="secure-15">Add</button></td>
+        </tr>
+        <tr>
+          <td><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80" alt="Fleet 16"></td>
+          <td><strong>Fleet 16</strong></td>
+          <td>Knowledge work</td>
+          <td>$1,899</td>
+          <td><button class="req" data-add="fleet-16">Add</button></td>
+        </tr>
+        <tr>
+          <td><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80" alt="Brief 12"></td>
+          <td><strong>Brief 12</strong></td>
+          <td>Travel</td>
+          <td>$1,399</td>
+          <td><button class="req" data-add="brief-12">Add</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <footer class="bx"><div class="shell"><p>700 Corporate Parkway, Chicago, IL 60601 · sales@braxtonelite.com · +1 312 555 0154</p></div></footer>
+  <div class="shade" id="shade"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Requisition</strong><button class="out" style="color:var(--navy);border-color:var(--line)" id="dclose">Close</button></div>
+    <div class="db" id="db"></div>
+    <div class="df"><span id="dt">$0</span><a class="gold" href="cart.html">Review</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+</body>
+</html>

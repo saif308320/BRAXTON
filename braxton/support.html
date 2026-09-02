@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Desk — Braxton</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar"><div class="shell"><span>IT Desk · 07:00–19:00 CT</span><span>+1 312 555 0154</span></div></div>
+  <header class="bx">
+    <a class="wordmark" href="index.html">BRAXTON <span>BUSINESS SYSTEMS</span></a>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">EliteBook 13</a>
+      <a href="about.html">About</a>
+      <a class="cur" href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="req" data-bag>Requisition <span data-count>0</span></button>
+      <button class="menu" id="menu">☰</button>
+    </div>
+  </header>
+  <div class="shell sec" style="max-width:760px">
+    <div class="k">IT Desk</div>
+    <h1 style="font-size:32px;margin:8px 0 20px">Answers for the people who image the fleet.</h1>
+    <div class="faq">
+      <div class="open"><button>Warranty terms?</button><div class="a">36 months, next-business-day on-site in the continental US for Elite series. Depot elsewhere.</div></div>
+      <div><button>Imaging / Autopilot?</button><div class="a">Yes. We ship Autopilot-registered and can white-glove image from your WIM.</div></div>
+      <div><button>TPM attestation?</button><div class="a">Each EliteBook 13 ships with a discrete TPM 2.0 attestation report in the box and in the portal.</div></div>
+      <div><button>Lead times on 500+?</button><div class="a">Stock SKUs 5–8 days. Custom RAM/storage 12–18 days from Chicago.</div></div>
+    </div>
+  </div>
+  <footer class="bx"><div class="shell"><p>700 Corporate Parkway, Chicago, IL 60601 · sales@braxtonelite.com · +1 312 555 0154</p></div></footer>
+  <div class="shade" id="shade"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Requisition</strong><button class="out" style="color:var(--navy);border-color:var(--line)" id="dclose">Close</button></div>
+    <div class="db" id="db"></div>
+    <div class="df"><span id="dt">$0</span><a class="gold" href="cart.html">Review</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>document.querySelectorAll(".faq > div > button").forEach(b=>b.onclick=()=>b.parentElement.classList.toggle("open"));</script>
+</body>
+</html>

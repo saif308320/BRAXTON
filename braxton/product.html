@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EliteBook 13 — Braxton</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar"><div class="shell"><span>Enterprise procurement</span><span>+1 312 555 0154</span></div></div>
+  <header class="bx">
+    <a class="wordmark" href="index.html">BRAXTON <span>BUSINESS SYSTEMS</span></a>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a class="cur" href="product.html">EliteBook 13</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="req" data-bag>Requisition <span data-count>0</span></button>
+      <button class="menu" id="menu">☰</button>
+    </div>
+  </header>
+  <div class="pdp">
+    <div class="g">
+      <img class="big" id="main" src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1600&q=80" alt="Braxton EliteBook 13">
+      <div class="rowt" id="th">
+        <img class="on" src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=400&q=80" data-f="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1600&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" data-f="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" data-f="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80" data-f="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80" alt="">
+      </div>
+    </div>
+    <div class="cfg">
+      <div class="k">Executive SKU</div>
+      <h1>EliteBook 13</h1>
+      <p style="color:var(--steel)">MIL-STD-810H. Discrete TPM. Privacy shutter. The machine legal and finance actually keep.</p>
+      <div class="live" id="price">$1,799</div>
+      <div class="ch"><span>Memory</span>
+        <button class="on" data-r="0">16GB</button>
+        <button data-r="1">32GB +$240</button>
+      </div>
+      <div class="ch"><span>Storage</span>
+        <button class="on" data-s="0">512GB</button>
+        <button data-s="1">1TB +$160</button>
+        <button data-s="2">2TB +$380</button>
+      </div>
+      <div style="margin:14px 0"><button class="out" style="color:var(--navy);border-color:var(--line)" id="m">−</button> <span id="q">1</span> <button class="out" style="color:var(--navy);border-color:var(--line)" id="p">+</button></div>
+      <button class="gold" id="add">Add to requisition</button>
+      <p class="toast" id="toast"></p>
+    </div>
+  </div>
+  <div class="shell sec">
+    <div class="k">Security stack</div>
+    <h2>Not a sticker. A stack.</h2>
+    <div class="secu">
+      <article><h4>Discrete TPM 2.0</h4><p>Independent module, BitLocker-ready, attested at ship.</p></article>
+      <article><h4>IR + shutter</h4><p>Windows Hello. Physical camera kill. No firmware theater.</p></article>
+      <article><h4>Fleet lock</h4><p>Absolute-compatible. BIOS password escrow for IT.</p></article>
+    </div>
+    <table class="sp">
+      <tr><td>Display</td><td>13.3" 2.8K, 400 nits, privacy optional</td></tr>
+      <tr><td>Processor</td><td>Braxton vPro 12, managed silicon</td></tr>
+      <tr><td>Memory</td><td>16 / 32GB LPDDR5</td></tr>
+      <tr><td>Storage</td><td>OPAL SED 512GB / 1TB / 2TB</td></tr>
+      <tr><td>Battery</td><td>58Wh, 14 hour mixed office</td></tr>
+      <tr><td>Weight</td><td>1.12 kg</td></tr>
+      <tr><td>Ports</td><td>2× USB-C, HDMI, USB-A, nano-SIM, lock slot</td></tr>
+    </table>
+    <div class="rv">“We issued 400 units. Zero TPM incidents. Helpdesk tickets dropped 18%.” — CIO, Prairie Health</div>
+    <div class="rv">“Looks like a tool. That is the compliment.” — Partner, Helix Legal</div>
+  </div>
+  <footer class="bx"><div class="shell"><p>700 Corporate Parkway, Chicago, IL 60601 · sales@braxtonelite.com · +1 312 555 0154</p></div></footer>
+  <div class="shade" id="shade"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Requisition</strong><button class="out" style="color:var(--navy);border-color:var(--line)" id="dclose">Close</button></div>
+    <div class="db" id="db"></div>
+    <div class="df"><span id="dt">$0</span><a class="gold" href="cart.html">Review</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>
+    const ramA=[0,240], ssdA=[0,160,380];
+    let r=0,s=0,q=1;
+    function price(){return 1799+ramA[r]+ssdA[s];}
+    function paint(){document.getElementById("price").textContent=BX.money(price());}
+    document.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{r=+b.dataset.r;document.querySelectorAll("[data-r]").forEach(x=>x.classList.toggle("on",x===b));paint();});
+    document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{s=+b.dataset.s;document.querySelectorAll("[data-s]").forEach(x=>x.classList.toggle("on",x===b));paint();});
+    document.getElementById("p").onclick=()=>{q++;document.getElementById("q").textContent=q;};
+    document.getElementById("m").onclick=()=>{q=Math.max(1,q-1);document.getElementById("q").textContent=q;};
+    document.getElementById("add").onclick=()=>{
+      BX.add({id:"elite",name:"Braxton EliteBook 13",price:price(),img:BX.PRODUCTS.elite.img,qty:q,config:(r?"32GB":"16GB")+" / "+["512GB","1TB","2TB"][s]});
+      document.getElementById("toast").textContent="Added to requisition.";
+      BX.openD();
+    };
+    document.querySelectorAll("#th img").forEach(i=>i.onclick=()=>{document.querySelectorAll("#th img").forEach(x=>x.classList.remove("on"));i.classList.add("on");document.getElementById("main").src=i.dataset.f;});
+  </script>
+</body>
+</html>

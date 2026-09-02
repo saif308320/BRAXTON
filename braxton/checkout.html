@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Braxton</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar"><div class="shell"><span>Secure procurement</span><span>sales@braxtonelite.com</span></div></div>
+  <header class="bx">
+    <a class="wordmark" href="index.html">BRAXTON <span>BUSINESS SYSTEMS</span></a>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">EliteBook 13</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="req" data-bag>Requisition <span data-count>0</span></button>
+      <button class="menu" id="menu">☰</button>
+    </div>
+  </header>
+  <div class="shell" style="padding-top:36px">
+    <div class="k">1 Ship · 2 Bill · 3 Confirm</div>
+    <h1 style="font-size:32px;margin:8px 0 24px">Complete purchase order</h1>
+  </div>
+  <div class="shell chk">
+    <form id="f">
+      <div id="a">
+        <label>Company</label><input required>
+        <label>Buyer name</label><input required>
+        <label>Email</label><input type="email" required>
+        <label>Ship-to address</label><input required>
+        <label>City</label><input required>
+        <button type="button" class="gold" id="n1">Continue</button>
+      </div>
+      <div id="b" hidden>
+        <label>Name on card</label><input required>
+        <label>Card number</label><input required>
+        <label>Expiry</label><input required>
+        <label>CVC</label><input required>
+        <button type="button" class="out" style="color:var(--navy);border-color:var(--line)" id="b1">Back</button>
+        <button type="button" class="gold" id="n2">Review</button>
+      </div>
+      <div id="c" hidden>
+        <p>Net-30 available for approved accounts. Stock SKUs ship from Chicago in 2–5 days.</p>
+        <button type="button" class="out" style="color:var(--navy);border-color:var(--line)" id="b2">Back</button>
+        <button class="gold" type="submit">Submit order</button>
+      </div>
+    </form>
+    <aside class="side" id="side"></aside>
+  </div>
+  <footer class="bx"><div class="shell"><p>700 Corporate Parkway, Chicago, IL 60601 · sales@braxtonelite.com · +1 312 555 0154</p></div></footer>
+  <div class="shade" id="shade"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Requisition</strong><button class="out" style="color:var(--navy);border-color:var(--line)" id="dclose">Close</button></div>
+    <div class="db" id="db"></div>
+    <div class="df"><span id="dt">$0</span><a class="gold" href="cart.html">Review</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById("side").innerHTML=BX.load().map(i=>`<p>${i.name} × ${i.qty} — ${BX.money(i.price*i.qty)}</p>`).join("")+`<p><strong>${BX.money(BX.total())}</strong></p>`;
+    const A=document.getElementById("a"),B=document.getElementById("b"),C=document.getElementById("c");
+    document.getElementById("n1").onclick=()=>{A.hidden=true;B.hidden=false;};
+    document.getElementById("n2").onclick=()=>{B.hidden=true;C.hidden=false;};
+    document.getElementById("b1").onclick=()=>{B.hidden=true;A.hidden=false;};
+    document.getElementById("b2").onclick=()=>{C.hidden=true;B.hidden=false;};
+    document.getElementById("f").onsubmit=e=>{
+      e.preventDefault();
+      if(!BX.load().length){location.href="shop.html";return;}
+      sessionStorage.setItem("braxton_order",JSON.stringify({id:"BX-"+Math.random().toString(36).slice(2,7).toUpperCase(),total:BX.total(),items:BX.load()}));
+      BX.clear(); location.href="confirm.html";
+    };
+  </script>
+</body>
+</html>

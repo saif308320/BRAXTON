@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requisition — Braxton</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar"><div class="shell"><span>Enterprise procurement</span><span>sales@braxtonelite.com</span></div></div>
+  <header class="bx">
+    <a class="wordmark" href="index.html">BRAXTON <span>BUSINESS SYSTEMS</span></a>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">EliteBook 13</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="req" data-bag>Requisition <span data-count>0</span></button>
+      <button class="menu" id="menu">☰</button>
+    </div>
+  </header>
+  <div class="shell cartp">
+    <div class="k">Procurement</div>
+    <h1 style="font-size:32px;margin:8px 0 20px">Open requisition</h1>
+    <div id="list"></div>
+    <div style="margin-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <strong id="tot"></strong>
+      <a class="gold" href="checkout.html">Proceed to checkout</a>
+    </div>
+  </div>
+  <footer class="bx"><div class="shell"><p>700 Corporate Parkway, Chicago, IL 60601 · sales@braxtonelite.com · +1 312 555 0154</p></div></footer>
+  <div class="shade" id="shade"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Requisition</strong><button class="out" style="color:var(--navy);border-color:var(--line)" id="dclose">Close</button></div>
+    <div class="db" id="db"></div>
+    <div class="df"><span id="dt">$0</span><a class="gold" href="cart.html">Review</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>
+    window.renderCart=function(){
+      const list=document.getElementById("list"); const c=BX.load();
+      document.getElementById("tot").textContent="Total "+BX.money(BX.total());
+      if(!c.length){list.innerHTML="<p style='color:var(--steel);padding:32px 0'>No line items. <a href='shop.html'>Open portfolio</a>.</p>";return;}
+      list.innerHTML=c.map(i=>`<div class="ci"><img src="${i.img}" alt=""><div><strong>${i.name}</strong><div style="color:var(--steel)">${i.config}</div></div>
+        <div><button class="out" style="color:var(--navy);border-color:var(--line)" data-q="${i.key}" data-d="-1">−</button> ${i.qty} <button class="out" style="color:var(--navy);border-color:var(--line)" data-q="${i.key}" data-d="1">+</button></div>
+        <div>${BX.money(i.price*i.qty)}<br><button class="out" style="color:var(--navy);border-color:var(--line)" data-rm="${i.key}">Remove</button></div></div>`).join("");
+      list.querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>BX.remove(b.dataset.rm));
+      list.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{const it=BX.load().find(x=>x.key===b.dataset.q);BX.updateQty(b.dataset.q,it.qty+Number(b.dataset.d));});
+    };
+    document.addEventListener("DOMContentLoaded",()=>window.renderCart());
+  </script>
+</body>
+</html>

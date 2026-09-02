@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offices — Braxton</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar"><div class="shell"><span>Chicago HQ</span><span>+1 312 555 0154</span></div></div>
+  <header class="bx">
+    <a class="wordmark" href="index.html">BRAXTON <span>BUSINESS SYSTEMS</span></a>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">EliteBook 13</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a class="cur" href="contact.html">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="req" data-bag>Requisition <span data-count>0</span></button>
+      <button class="menu" id="menu">☰</button>
+    </div>
+  </header>
+  <div class="shell ct" style="padding-top:40px">
+    <form id="cf">
+      <div class="k">Sales desk</div>
+      <h1 style="font-size:32px;margin:8px 0 16px">Request a quote.</h1>
+      <label>Name</label><input required>
+      <label>Company</label><input required>
+      <label>Email</label><input type="email" required>
+      <label>Message</label><textarea required rows="5"></textarea>
+      <button class="gold" style="margin-top:14px">Submit</button>
+      <p class="toast" id="ok"></p>
+    </form>
+    <div class="chi">
+      <div>
+        <strong>Braxton Business Systems</strong>
+        <p>700 Corporate Parkway<br>Chicago, IL 60601, USA</p>
+        <p>sales@braxtonelite.com<br>+1 312 555 0154</p>
+      </div>
+    </div>
+  </div>
+  <footer class="bx"><div class="shell"><p>© 2026 Braxton Business Systems.</p></div></footer>
+  <div class="shade" id="shade"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Requisition</strong><button class="out" style="color:var(--navy);border-color:var(--line)" id="dclose">Close</button></div>
+    <div class="db" id="db"></div>
+    <div class="df"><span id="dt">$0</span><a class="gold" href="cart.html">Review</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>document.getElementById("cf").onsubmit=e=>{e.preventDefault();document.getElementById("ok").textContent="Received. Sales replies within one business day.";e.target.reset();};</script>
+</body>
+</html>
